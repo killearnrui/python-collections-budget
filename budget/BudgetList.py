@@ -28,9 +28,9 @@ class BudgetList():
     
     def __next__(self):
         try:
-            return self.iter_e        
+            return next(self.iter_e)
         except StopIteration as Stop:
-            return self.iter_o
+            return next(self.iter_o)
         
 def main():
     myBudgetList = BudgetList(1200)
@@ -54,7 +54,7 @@ def main():
     ax.bar(labels, values, color=['green','red','blue'])
     ax.set_title('Your total expenses vs. total budget')
     plt.show()
-    
+
 
 
 if __name__ == "__main__":
